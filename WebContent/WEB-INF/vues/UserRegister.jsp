@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Acceuil GestionRDV</title>
+	<title>Users-Register GestionRDV</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -31,19 +31,19 @@
 </div>
 <div id="main">
 	<button class="openbtn" onclick="openNav()">Menu</button>
-	<h2 class="text-center" >Formulaire d'enregistrement d'un RDV</h2>
+	<h2 class="text-center" >Formulaire d'enregistrement d'un utilisateur</h2>
 	
 <form id=""  method="post" action="">
-  
+    
   <div class="row d-flex justify-content-center">
   
   <div class="col-md-4">
   
    <label for="Nom"></label> 
-    <input type="text"  name="Nom" class="form-control" placeholder="Nom du demandeur de RDV" required autofocus>
+    <input type="text"  name="Nom" class="form-control" placeholder="Nom de l'utilisateur" required autofocus>
    
     <label for="Prenom" > </label> 
-    <input type="text"  name="Prenom" class="form-control" placeholder="Prenom  du demandeur de RDV" required autofocus>
+    <input type="text"  name="Prenom" class="form-control" placeholder="Prenom  de l'utilisateur" required autofocus>
    
       <label > </label>
     <input type="text"  name="adresse" class="form-control" placeholder="Adresse" required autofocus>
@@ -55,33 +55,37 @@
   	<input type="text"  name="mail" class="form-control" placeholder="Mail" required autofocus>
     <br>
     
-  </div>
-  
-  <div class="col-md-4">
-  
- 
- <label ></label>
+    <label ></label>
     <select  required name="sexe"  class="form-control" required style="height: 2.75em; ">
         <option value="">Sexe</option>
         <option value ="M">Masculin</option>
         <option value ="F">Feminin</option>
     </select>
 	<br>
-	
-	  
+		  
 	<input type="text"  name="fonction" class="form-control" placeholder="Fonction" required autofocus>
    <label ></label>
-	
-	 <label > </label>
-	 <input type="date"  name="daterdv" class="form-control"  required autofocus>
-   <br>
+    
+  </div>
   
-    <input type="text"  name="motif" class="form-control" placeholder="Motif" required autofocus>
-    <label ></label>
+  <div class="col-md-4">
+  
+  	  <label > </label>
+    <input type="text"  name="username" class="form-control" placeholder="username" required autofocus>
+   
+    <label > </label>
+  	<input type="password"  name="password" class="form-control" placeholder="password" required autofocus>
+    <br>
+		  
+	<input type="password"  name="confirmpassword" class="form-control" placeholder="confirm password" required autofocus>
+   <label ></label>
+ 
+	
     <br>
   </div>
   </div>
   
+   
   <div class="d-flex justify-content-around ">
   <div class="" >
   <button  class="btn btn-md btn-success" type="submit">Valider</button>
@@ -93,8 +97,9 @@
    
 </form>
 
+ </div>
+	
 
-	</div>
 	
 	<script>
 	 function openNav() {

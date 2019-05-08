@@ -62,3 +62,23 @@ background-color:#444;
  margin-right: auto; 
  margin-top:70px;
  }
+ 
+ 
+ 
+#footer {
+    clear: both;
+    margin-top: 100px;
+    width: 100%;
+    color: #35383f;
+    text-align: center;
+    padding: 8px;
+    background-color: #cccccc;
+	border-top: 1px solid #c4c4c4;
+	border-bottom: 1px solid #c4c4c4;
+	/*direction: ltr;
+
+	 */
+   /* position: fixed;*/
+    bottom: 0;
+}
+ 
