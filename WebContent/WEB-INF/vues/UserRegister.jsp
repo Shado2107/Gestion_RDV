@@ -10,25 +10,9 @@
  </head>
  <body>
  
+<jsp:include page="../includes/header.jsp" />
 
-       <nav class="nav justify-content-end" style="background-color: silver; ">  
-       		<a class="nav-link">Acceuil</a>
-       		<a class="nav-link">Acceuil</a>
-       		<a class="nav-link">Acceuil</a>
-       		<a class="nav-link">Acceuil</a>
-       </nav> 
-         
 
- <div id="mySidebar" class="sidebar">
-	<a href="javascript:void(0)" class="closebtn"  onclick="closeNav()">x</a>
-		<a href="#">Acceuil </a>
-		<a href="#">DashBoard</a>
-		<a href="#">Products </a>
-		<a href="#">Settings </a>
-		<a href="#">Chats</a>
-		<a href="#">About </a>
-		
-</div>
 <div id="main">
 	<button class="openbtn" onclick="openNav()">Menu</button>
 	<h2 class="text-center" >Formulaire d'enregistrement d'un utilisateur</h2>
@@ -68,8 +52,9 @@
     
   </div>
   
-  <div class="col-md-4">
+    
   
+   <div class="col-md-4">
   	  <label > </label>
     <input type="text"  name="username" class="form-control" placeholder="username" required autofocus>
    
@@ -79,13 +64,13 @@
 		  
 	<input type="password"  name="confirmpassword" class="form-control" placeholder="confirm password" required autofocus>
    <label ></label>
- 
 	
     <br>
-  </div>
+    
   </div>
   
-   
+  </div>
+    
   <div class="d-flex justify-content-around ">
   <div class="" >
   <button  class="btn btn-md btn-success" type="submit">Valider</button>
