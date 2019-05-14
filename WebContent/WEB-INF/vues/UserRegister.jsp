@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Users-Register GestionRDV</title>
+	<title> GestionRDV</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -14,7 +14,7 @@
 
 
 <div id="main">
-	<button class="openbtn" onclick="openNav()">Menu</button>
+
 	<h2 class="text-center" >Formulaire d'enregistrement d'un utilisateur</h2>
 	
 <form id=""  method="post" action="">

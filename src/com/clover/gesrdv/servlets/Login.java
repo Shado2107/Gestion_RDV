@@ -2,12 +2,14 @@ package com.clover.gesrdv.servlets;
 
 import java.io.IOException;
 
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.clover.gesrdv.bdd.connection;
 
 
 
@@ -34,21 +36,33 @@ public class Login extends HttpServlet {
 		//PrintWriter out = response.getWriter();
 		//out.println("BONJOUR");
 	}
+	
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		//String username = request.getParameter("username");
-	//	String password = request.getParameter("password");
-		
-	//	HttpSession session = request.getSession();
-	//	session.setAttribute(username, "username");
-	//	session.setAttribute(password, "password");
-		
-		
-//		this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request,response);
+	
+	String username = request.getParameter("username");
+	String password = request.getParameter("password");
+	RequestDispatcher rd = null;
+	connection connect = new connection();	
+	
+	if ((username== null || username.isEmpty())|| (password == null || password.isEmpty())) {
+		rd= request.getRequestDispatcher("/WEB-INF/login.jsp");
+		rd.forward(request, response);
+	}else {
+		String message = connect.verifieridentifiants(username, password);
+		if(message.equals("SUCCESS")) {
+			rd = request.getRequestDispatcher("/WEB-INF/vues/acceuil.jsp");
+			rd.forward(request, response);
+		}else if(message.equals("FAILURE")) {
+			rd= request.getRequestDispatcher("/WEB-INF/login.jsp");
+			rd.forward(request, response);
+		}
+	}
 		
 	}
 

@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link  href="assets/vendor/css/acceuil.css" rel="stylesheet">
+    <link href="assets/bootstrap/fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
 
  </head>
  <body>
@@ -16,7 +17,7 @@
     
 
 <div id="main">
-	<button class="openbtn" onclick="openNav()">Menu</button>
+	
 	<h2 class="text-center" >Formulaire d'enregistrement d'un RDV</h2>
 	
 <form id=""  method="post" action="">
@@ -62,8 +63,9 @@
 	 <input type="date"  name="daterdv" class="form-control"  required autofocus>
    <br>
   
-    <input type="text"  name="motif" class="form-control" placeholder="Motif" required autofocus>
-    <label ></label>
+  	<textarea class="form-control" name="motif" rows="5" col="40" placeholder="entrez votre motif ici...">
+  	</textarea>
+    
     <br>
   </div>
   </div>
