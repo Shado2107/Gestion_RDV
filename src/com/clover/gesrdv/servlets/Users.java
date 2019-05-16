@@ -35,7 +35,17 @@ public class Users extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
-		doGet(request, response);
+		String name = request.getParameter("Nom");
+		String surname = request.getParameter("Prenom");
+		String adress = request.getParameter("adresse");
+		String phone = request.getParameter("telephone");
+		String mail = request.getParameter("mail");
+		String sex = request.getParameter("sexe");
+		String function =  request.getParameter("fonction");
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		
 	}
 
 }

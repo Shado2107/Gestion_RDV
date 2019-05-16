@@ -5,11 +5,14 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.clover.gesrdv.bdd.connection;
+import com.clover.gesrdv.bdd.JdbcConnection;
+import com.clover.gesrdv.forms.connectionForm;
 
 
 
@@ -48,21 +51,32 @@ public class Login extends HttpServlet {
 	String username = request.getParameter("username");
 	String password = request.getParameter("password");
 	RequestDispatcher rd = null;
-	connection connect = new connection();	
+	connectionForm connected = new connectionForm();	
 	
 	if ((username== null || username.isEmpty())|| (password == null || password.isEmpty())) {
 		rd= request.getRequestDispatcher("/WEB-INF/login.jsp");
 		rd.forward(request, response);
 	}else {
-		String message = connect.verifieridentifiants(username, password);
+		
+		String message = connected.verifieridentifiants(username, password);
+		
+		
+		System.out.println(message);
+		
 		if(message.equals("SUCCESS")) {
 			rd = request.getRequestDispatcher("/WEB-INF/vues/acceuil.jsp");
 			rd.forward(request, response);
 		}else if(message.equals("FAILURE")) {
+			//rd = request.getRequestDispatcher("/WEB-INF/vues/acceuil.jsp");
 			rd= request.getRequestDispatcher("/WEB-INF/login.jsp");
 			rd.forward(request, response);
 		}
 	}
+		
+	
+		
+		
+
 		
 	}
 

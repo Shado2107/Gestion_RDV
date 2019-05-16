@@ -4,6 +4,7 @@
 <head>
 	<title>Acceuil GestionRDV</title>
 	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="assets/vendor/Images/icons/favicon.ico"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link  href="assets/vendor/css/acceuil.css" rel="stylesheet">
