@@ -74,8 +74,9 @@ public class connectionForm {
 			} else {
 				message = "FAILURE";
 			}
+			
 		} catch (Exception e) {
-			message= "FAILURE";
+			
 			e.printStackTrace();
 		}
 		

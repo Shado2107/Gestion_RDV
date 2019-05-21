@@ -1,6 +1,5 @@
 package com.clover.gesrdv.forms;
 
-public class ListUsers {
+public class rdvForm {
 
-	
 }

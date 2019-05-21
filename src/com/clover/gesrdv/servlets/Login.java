@@ -53,6 +53,12 @@ public class Login extends HttpServlet {
 	RequestDispatcher rd = null;
 	connectionForm connected = new connectionForm();	
 	
+	
+	System.out.println(username);
+	System.out.println(password);
+	
+	HttpSession session = request.getSession();
+	
 	if ((username== null || username.isEmpty())|| (password == null || password.isEmpty())) {
 		rd= request.getRequestDispatcher("/WEB-INF/login.jsp");
 		rd.forward(request, response);
@@ -64,6 +70,9 @@ public class Login extends HttpServlet {
 		System.out.println(message);
 		
 		if(message.equals("SUCCESS")) {
+			
+			session.setAttribute("nom", username);
+			
 			rd = request.getRequestDispatcher("/WEB-INF/vues/acceuil.jsp");
 			rd.forward(request, response);
 		}else if(message.equals("FAILURE")) {
