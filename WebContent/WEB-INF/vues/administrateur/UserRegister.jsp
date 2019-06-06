@@ -3,16 +3,18 @@
 <head>
 	<title> GestionRDV</title>
 	<meta charset="UTF-8">
-	<link rel="icon" type="image/png" href="assets/vendor/Images/icons/favicon.ico"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link  href="assets/vendor/css/acceuil.css" rel="stylesheet">
+	
 
  </head>
  <body>
  
-<jsp:include page="../includes/header.jsp" />
+<c:if test="${sessionScope.profil eq 'directeur' or sessionScope.profil eq 'chef'}">
+	<jsp:include page="../../includes/header_directeur.jsp" />
+</c:if>
 
+<c:if test="${sessionScope.profil eq 'secretaire' }">
+	<jsp:include page="../../includes/header.jsp" />
+</c:if>
 
 <div id="main">
 
@@ -85,17 +87,7 @@
 
  </div>
 	
-
-	
-	<script>
-	 function openNav() {
-	 document.getElementById("mySidebar").style.width="250px";
-	 document.getElementById("main").style.marginLeft="250px";
-	 }
-	 function closeNav(){
-	 document.getElementById("mySidebar").style.width="0";
-	 document.getElementById("main").style.marginLeft="0";
-	 }
-	 </script>
  </body>
+ <jsp:include page="../../includes/footer.jsp" />
+ 
  </html>

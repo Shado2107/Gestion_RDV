@@ -13,7 +13,7 @@
     <link href="assets/bootstrap/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<script type="text/javascript" src="assets/bootstrap/jquery/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/vendor/js/notification.js"></script>
+<script type="text/javascript" src="assets/vendor/js/notification.js"></script>
  </head>
  
  
@@ -25,7 +25,7 @@
    	
   
      <ul class="navbar-nav mr-auto">
-     <div >
+     <div class="">
  			<button type="button" id="sidebarCollapse" class=btn btn-info>
  				<i class="fa fa-bars"></i>
  				<span></span>
@@ -38,9 +38,7 @@
      <li class="nav-item">
      	<img class="rounded-circle" src="assets/vendor/Images/user.png" height="30"/>
      	<a>welcome, </a><c:if test="${!empty sessionScope.prenom }">${ sessionScope.prenom } </c:if>
-     <a class="btn btn-sm btn-danger pull-right m-t-n-xs" href="Logout">Deconnexion</a>
-
-     	   
+     <a class="btn btn-sm btn-danger pull-right m-t-n-xs" href="Logout" >Deconnexion</a>
      </li>  
     </ul>
    
@@ -65,19 +63,12 @@
  		<li class="active"> 
  			<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Rendez-vous</a>
  			<ul class="collapse list-unstyled" id="homeSubmenu">
- 				<li><a href="RDV">Enregistrer un rdv</a></li>
- 				<li><a href="ListRDV">Liste des rdv</a></li>
+ 				<li><a href="Mesrdv">Mes rendez-vous</a></li>
+ 				<li><a href="Agenda" onclick="lancerExempleNotif()" >Mon Agenda</a></li>
  				
  			</ul> 
  		</li>
- 		<li class=""> 
- 			<a href="#Submenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Utilisateurs/clients</a>
- 			<ul class="collapse list-unstyled" id="Submenu2">
- 				<li><a href="UserList">Liste des utilisateurs</a></li>
- 				<li><a href="#">Liste des clients</a></li>
- 				
- 			</ul> 
- 		</li>
+ 		
  		<li>
  			<a href="#">Parametres</a>
  		</li>	

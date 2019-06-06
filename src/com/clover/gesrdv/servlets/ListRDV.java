@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.clover.gesrdv.forms.listeutilisateur;
+import com.clover.gesrdv.forms.rdvForm;
 
 /**
- * Servlet implementation class UserList
+ * Servlet implementation class ListRDV
  */
-@WebServlet("/UserList")
-public class UserList extends HttpServlet {
+@WebServlet("/ListRDV")
+public class ListRDV extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserList() {
+    public ListRDV() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,11 +30,12 @@ public class UserList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		listeutilisateur tableuser = new listeutilisateur();
-		request.setAttribute("util", tableuser.recupererutilisateur() );
 	
-		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/administrateur/listeutilisateur.jsp").forward(request, response);
+		rdvForm tablerdv = new rdvForm();
+		request.setAttribute("rendezvs", tablerdv.toutrdv() );
+
+		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/listrdv.jsp").forward(request,response);
+	
 	}
 
 	/**

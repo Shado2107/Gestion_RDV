@@ -10,9 +10,16 @@ public class utilisateur {
 	public String password;
 	public String sexe;
 	public String identifiant;
+	public String id;
 	
 	
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getIdentifiant() {
 		return identifiant;
 	}

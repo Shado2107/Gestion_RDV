@@ -5,8 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Liste des utilisateurs</title>
+
+<c:if test="${sessionScope.profil eq 'directeur' or sessionScope.profil eq 'chef'}">
+	<jsp:include page="../../includes/header_directeur.jsp" />
+</c:if>
+
+<c:if test="${sessionScope.profil eq 'secretaire' }">
+	<jsp:include page="../../includes/header.jsp" />
 	
- <jsp:include page="../includes/header.jsp" />
+</c:if>
+
+
 </head>
 
 
@@ -18,7 +27,12 @@
 
 <h2 class="text-center" >Liste des utilisateurs</h2>
 <br>
+
+
 <div class="container">
+<div class="col-md-8 offset-md-3">
+
+<div class="row d-flex justify-content-center">
 <table class="table table-striped ">
   <thead>
     <tr>
@@ -35,6 +49,10 @@
       <td><c:out value="${util.nom }"/></td>
       <td><c:out value="${util.prenom}"/></td> 
       <td><c:out value="${util.fonction}"/></td> 
+       <td>
+       <button class=" btn btn-outline-success accept" ><i class="fa fa-edit" title="Valider"></i></button>
+       <button class="btn btn-outline-danger refuse" ><i class="fa fa-trash" title="Refuser"></i></button>
+       </td>
            
     </tr>
   </tbody>
@@ -46,18 +64,12 @@
 
 
 </div>
+</div>
 
-<jsp:include page="../includes/footer.jsp" />
+</div>
+
+
 </body>
+<jsp:include page="../../includes/footer.jsp" />
 
-<script>
-	 function openNav() {
-	 document.getElementById("mySidebar").style.width="250px";
-	 document.getElementById("main").style.marginLeft="250px";
-	 }
-	 function closeNav(){
-	 document.getElementById("mySidebar").style.width="0";
-	 document.getElementById("main").style.marginLeft="0";
-	 }
-	 </script>
 </html>

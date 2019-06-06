@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.clover.gesrdv.forms.listeutilisateur;
+import com.clover.gesrdv.forms.rdvForm;
 
 /**
- * Servlet implementation class UserList
+ * Servlet implementation class Agenda
  */
-@WebServlet("/UserList")
-public class UserList extends HttpServlet {
+@WebServlet("/Agenda")
+public class Agenda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserList() {
+    public Agenda() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,11 +30,15 @@ public class UserList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		listeutilisateur tableuser = new listeutilisateur();
-		request.setAttribute("util", tableuser.recupererutilisateur() );
 	
-		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/administrateur/listeutilisateur.jsp").forward(request, response);
+		rdvForm tableagenda = new rdvForm();
+		
+		request.setAttribute("agenda", tableagenda.recupererrdv());
+		
+
+		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/directeur/Agenda.jsp").forward(request,response);
+	
+	
 	}
 
 	/**
@@ -42,7 +46,22 @@ public class UserList extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		
+		/*rdvForm ag = new rdvForm();
+		String id = request.getParameter("id");
+		String dec = request.getParameter("dec");
+		 System.out.println("donnees rexu");
+		if(dec.equalsIgnoreCase("val")) {
+			ag.Accepter(id);
+		} else if(dec.equalsIgnoreCase("del")) {
+			ag.refuser(id);
+		} else if (dec.equalsIgnoreCase("rep")) {
+			ag.reporter(id);
+		}
+		*/
+		
+		
 	}
 
 }

@@ -27,7 +27,7 @@ public class Users extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/UserRegister.jsp").forward(request,response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/administrateur/UserRegister.jsp").forward(request,response);
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class Users extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
-		String name = request.getParameter("Nom");
+		/*String name = request.getParameter("Nom");
 		String surname = request.getParameter("Prenom");
 		String adress = request.getParameter("adresse");
 		String phone = request.getParameter("telephone");
@@ -43,7 +43,7 @@ public class Users extends HttpServlet {
 		String sex = request.getParameter("sexe");
 		String function =  request.getParameter("fonction");
 		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String password = request.getParameter("password");*/
 		
 		
 	}

@@ -25,13 +25,37 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/vendor/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assets/vendor/css/main.css">
+	
 <!--===============================================================================================-->
 </head>
-<body>
+
+
+<body class="body">
 	
+
+<c:if test="${ !empty form.resultat }">
+		<script>
+		$(document).ready(function () {
+			$('.msg_error').text(" Identifiants incorrects ! ");
+			$('.msg_error').show();
+		});
+		</script>
+	</c:if>
+
+
+
 	<div class="limiter">
+	
+	
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+			
+			
+			<div class="alert alert-danger msg_error" role="alert">
+	 		Message d'erreur
+			</div>
+			
+			
 				<form class="login100-form validate-form flex-sb flex-w" action="Login" method="post">
 					<span class="login100-form-title p-b-32">
 						Connectez-vous !!!
@@ -72,7 +96,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit" >
+						<button class="login100-form-btn"  id="btn-aut"  type="submit"  ">
 							Se connecter
 						</button>
 					</div>
@@ -103,4 +127,28 @@
 	<script src="assets/vendor/js/main.js"></script>
 
 </body>
+
+<script type="text/javascript">
+	 $('.msg_error').hide();
+	 $(document).ready(function () {		 
+		    $('#btn-aut').click(function () {
+		        var login = $('#username').val();
+		        var pass = $('#password').val();
+
+		        
+		        if((login.trim().length==0) || (pass.trim().length==0 )){
+		        	$('.msg_error').text("Veuillez remplir correctement les champs ! ");
+		        	$('.msg_error').show();
+		        }
+		        else{
+		        	$('.msg_error').hide();
+		        	$('#form_aut').submit();
+		        }		        
+		    });
+
+	    });
+</script>
+
+
+
 </html>    

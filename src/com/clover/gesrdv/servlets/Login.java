@@ -48,10 +48,11 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	
-	String username = request.getParameter("username");
+	/*String username = request.getParameter("username");
 	String password = request.getParameter("password");
 	RequestDispatcher rd = null;
 	connectionForm connected = new connectionForm();	
+	
 	
 	
 	System.out.println(username);
@@ -60,6 +61,8 @@ public class Login extends HttpServlet {
 	HttpSession session = request.getSession();
 	
 	if ((username== null || username.isEmpty())|| (password == null || password.isEmpty())) {
+		
+		
 		rd= request.getRequestDispatcher("/WEB-INF/login.jsp");
 		rd.forward(request, response);
 	}else {
@@ -75,18 +78,59 @@ public class Login extends HttpServlet {
 			
 			rd = request.getRequestDispatcher("/WEB-INF/vues/acceuil.jsp");
 			rd.forward(request, response);
+			
+			
 		}else if(message.equals("FAILURE")) {
+		
 			//rd = request.getRequestDispatcher("/WEB-INF/vues/acceuil.jsp");
 			rd= request.getRequestDispatcher("/WEB-INF/login.jsp");
 			rd.forward(request, response);
 		}
 	}
+		*/
+	connectionForm form = new connectionForm();	
 		
-	
+form.verifierIdentifiants(request);
 		
+		String check = form.getResultat();
+		String prenom = form.getPrenom();
+		String profil = form.getProfil();
+	//	int id  = form.getId();
+		//int idD  = form.getIdD();
+		
+		request.setAttribute("form", form);
+		
+		
+		
+		if(check=="") {
+			HttpSession session = request.getSession();
+			
+			session.setAttribute("login", request.getParameter("login"));
+			
+			session.setAttribute("prenom", prenom);
+			
+			session.setAttribute("profil", profil);
+			
+		//	session.setAttribute("id", id);
+			
+		//	session.setAttribute("idD", idD);
+			
+			response.addCookie(new Cookie("login", request.getParameter("login")));
+			
+			this.getServletContext().getRequestDispatcher("/WEB-INF/vues/acceuil.jsp").forward(request, response);
+			
+			
+			
+		
+		}else {
+						
+			this.getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+
+		}
+	}	
 		
 
 		
-	}
+	
 
 }
