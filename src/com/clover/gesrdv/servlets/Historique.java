@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.clover.gesrdv.forms.rdvForm;
+import com.clover.gesrdv.forms.listeutilisateur;
 
 /**
- * Servlet implementation class Mesrdv
+ * Servlet implementation class Historique
  */
-@WebServlet("/Mesrdv")
-public class Mesrdv extends HttpServlet {
+@WebServlet("/Historique")
+public class Historique extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Mesrdv() {
+    public Historique() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,16 +29,13 @@ public class Mesrdv extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		listeutilisateur tableuser = new listeutilisateur();
+		request.setAttribute("util", tableuser.recupererutilisateur() );
 	
-		rdvForm tablerdv = new rdvForm();
-		
-		
-		
-		request.setAttribute("rendezvs", tablerdv.agendardv() );
-
-		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/directeur/mesrdv.jsp").forward(request,response);
 	
+		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/historique.jsp").forward(request,response);
 	
 	}
 
@@ -48,21 +45,6 @@ public class Mesrdv extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
-		rdvForm ag = new rdvForm();
-		String id = request.getParameter("id");
-		String dec = request.getParameter("dec");
-		 System.out.println("donnees rexu");
-		if(dec.equalsIgnoreCase("val")) {
-			ag.Accepter(id);
-		} else if(dec.equalsIgnoreCase("del")) {
-			ag.refuser(id);
-		} else if (dec.equalsIgnoreCase("rep")) {
-			ag.reporter(id);
-		}
-		
-		
-		
 	}
 
 }

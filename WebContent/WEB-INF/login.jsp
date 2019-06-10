@@ -25,7 +25,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="assets/vendor/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assets/vendor/css/main.css">
-	
+	<script type="text/javascript" src="assets/vendor/js/notification.js"></script>
 <!--===============================================================================================-->
 </head>
 
@@ -96,7 +96,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn"  id="btn-aut"  type="submit"  ">
+						<button class="login100-form-btn"  id="btn-aut"  type="submit">
 							Se connecter
 						</button>
 					</div>

@@ -17,7 +17,7 @@
  </head>
  
  
- <div id="content">
+ <div id="content" >
  	<nav class=" navbar navbar-expand-sm navbar-dark bg-info">
  		
  		   	        	   
@@ -36,8 +36,16 @@
        	        	    
      <ul class="navbar-nav ml-auto">
      <li class="nav-item">
+     
+     
+     		<c var="nombre" items="${nombre}" test="${nombre.nb }" neq 0  >
+     		<i class="fa fa-bell"><a class=" pull-right m-t-n-xs"  ></a><span class="rounded-circle "  ><c:out value="${nombre.nb }"/> </span></i>
+     		</c>
+     
+     
      	<img class="rounded-circle" src="assets/vendor/Images/user.png" height="30"/>
      	<a>welcome, </a><c:if test="${!empty sessionScope.prenom }">${ sessionScope.prenom } </c:if>
+     	
      <a class="btn btn-sm btn-danger pull-right m-t-n-xs" href="Logout" >Deconnexion</a>
      </li>  
     </ul>

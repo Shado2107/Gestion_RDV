@@ -12,13 +12,18 @@
 	<jsp:include page="../includes/header.jsp" />
 </c:if>
 
-  
+   <body onload="lancerExempleNotif()">
     
 
-<div id="main">
+<div id="main" >
 	
-	
-	
+	<br><br><br>
+<div class="card offset-md-6" style="width: 30% ;height:50%;">
+  <img class="card-img-top" src="assets/vendor/Images/" alt="">
+  <div class="card-body">
+    <p class="card-text">BIENVENU DANS VOTRE APPLICATION DE GESTION DES RENDEZ-VOUS GESRDV</p>
+  </div>
+</div>
 	
 	
 	

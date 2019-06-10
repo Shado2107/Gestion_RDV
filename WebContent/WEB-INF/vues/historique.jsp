@@ -1,4 +1,3 @@
-
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -43,21 +42,13 @@
     </tr>
     
   </thead>
-   <c:forEach var="rendezvs" items="${rendezvs}">
+   <c:forEach var="util" items="${util}">
   <tbody class="corps_tableau">
     <tr>
-      <td><c:out value="${rendezvs.daterdv}"/></td>
-      <td><c:out value="${rendezvs.motif }"/></td>  
-       <td><c:out value="${rendezvs.etatrdv }"/></td> 
-         <c:if test="${rendezvs.etatrdv eq 'reporter'}">
-         <td>
-          <div class="col-md-8">
-	 	 <input type="date"  name="daterdv" class="form-control"   autofocus>
-	 	  <button class=" btn btn-outline-success accepter" data-id="${rendezvs.id}"><i class="fa fa-check" title="Valider"></i></button>
-	 	</div>
-         	
-		</td>        
-         </c:if>   
+      <td><c:out value="${util.daterdv}"/></td>
+      <td><c:out value="${util.motif }"/></td>  
+       <td><c:out value="${util.etatrdv }"/></td> 
+         
     </tr>
   </tbody>
   </c:forEach>

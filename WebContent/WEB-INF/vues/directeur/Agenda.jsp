@@ -33,6 +33,7 @@
       <th scope="col">date du rdv</th>
       <th scope="col">Heure</th>  
       <th scope="col">Motifs</th> 
+      
              
     </tr>
     
@@ -43,7 +44,7 @@
       <td><c:out value="${agenda.daterdv}"/></td>
       <td><c:out value="${agenda.heure}"/></td>
       <td><c:out value="${agenda.motif }"/></td>
-                
+              
     </tr>
   </tbody>
   </c:forEach>

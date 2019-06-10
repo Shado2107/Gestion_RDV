@@ -71,7 +71,7 @@
  			</ul> 
  		</li>
  		<li class=""> 
- 			<a href="#Submenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Utilisateurs/clients</a>
+ 			<a href="#Submenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Utilisateurs / clients</a>
  			<ul class="collapse list-unstyled" id="Submenu2">
  				<li><a href="UserList">Liste des utilisateurs</a></li>
  				<li><a href="#">Liste des clients</a></li>
@@ -80,7 +80,9 @@
  		</li>
  		<li>
  			<a href="#">Parametres</a>
- 		</li>	
+ 		</li>
+ 		
+ 		
  		<li>
  			<a href="#">A propos</a>
  		</li>

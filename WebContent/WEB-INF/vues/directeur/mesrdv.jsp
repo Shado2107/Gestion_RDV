@@ -19,7 +19,7 @@
 	
 	<div class="clear"></div><br>
 
-<h2 class="text-center" >Mon agenda</h2>
+<h2 class="text-center" >Mes rendez-vous</h2>
 <br>
 <div class="container">
 
@@ -44,9 +44,9 @@
       <td><c:out value="${rendezvs.motif }"/></td>
       
        <td>
-       <button class=" btn btn-outline-success accepter" data-id="${rendezvs.id}"><i class="fa fa-check" title="Valider"></i></button>
-       <button class="btn btn-outline-warning report " data-id="${rendezvs.id}"><i class="fa fa-undo" title="Reporter"></i></button>
-        <button class="btn btn-outline-danger refuse  " data-id="${rendezvs.id}"><i class="fa fa-times" title="Refuser"></i></button>       
+       <button   onclick="lancernotifsecre()" class=" btn btn-outline-success accepter" data-id="${rendezvs.id}"><i class="fa fa-check" title="Valider"></i></button>
+       <button   onclick="lancernotifsecre()" class="btn btn-outline-warning report " data-id="${rendezvs.id}"><i class="fa fa-undo" title="Reporter"></i></button>
+        <button   onclick="lancernotifsecre()" class="btn btn-outline-danger refuse  " data-id="${rendezvs.id}"><i class="fa fa-times" title="Refuser"></i></button>       
        </td>
            
     </tr>
@@ -58,12 +58,12 @@
 </div>
 </div>
 
-
+</div>  
 
   <jsp:include page="../../includes/footer.jsp" />
   
   
-</div>  
+
   
 <script type="text/javascript">
 $(document).ready(function(){

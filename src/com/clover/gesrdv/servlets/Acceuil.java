@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.clover.gesrdv.forms.rdvForm;
+
 /**
  * Servlet implementation class Acceuil
  */
@@ -28,6 +30,10 @@ public class Acceuil extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		rdvForm notif = new rdvForm();
+		
+	//	request.setAttribute("nombre", notif.notifrdv());
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/acceuil.jsp").forward(request,response);
 	}

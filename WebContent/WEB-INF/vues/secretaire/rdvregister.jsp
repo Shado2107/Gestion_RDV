@@ -131,7 +131,7 @@
   
   <div class="d-flex justify-content-around ">
   <div class="" >
-  <button  class="btn btn-md btn-success" type="submit">Valider</button>
+  <button  class="btn btn-md btn-success" type="submit" onclick="lancernotifenregistrement()">Valider</button>
   </div>
   <div class="">
    <button class="btn btn-md btn-danger " type="reset" >Annuler</button>
